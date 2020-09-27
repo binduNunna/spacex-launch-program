@@ -1,0 +1,75 @@
+
+<div class="grid-container">
+  <div class="grid-item">
+   <h1 >SpaceX Launch Program</h1>
+    <div class="row col-md-12">
+      <!-- Filter -->
+      <div class="card col-md-3">
+          <!-- launch years -->
+        <ng-container class="launch_year pt-5px">
+          <h5>Filter</h5>
+            <p>Launch Year</p>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <button [ngClass]="launch?.selected ? 'btn col-md-4 active' : 'btn col-md-4'"
+                *ngFor="let launch of launchYear" (click)="selectedLaunchYear(launch.year)">{{launch?.year}}</button>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+        </ng-container>
+          <!-- successful launch -->
+        <ng-container class="launch_success pt-5px">
+          <p>Successful Launch</p>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <button [ngClass]="s_launch.selected ? 'btn col-md-4 active' : 'btn col-md-4'"
+                *ngFor="let s_launch of successLaunch"
+                (click)="successfulLaunch(s_launch.value)">{{s_launch?.value | titlecase}}</button></div>
+            <div class="col-md-3"></div>
+          </div>
+        </ng-container>
+          <!-- successful land  -->
+      <ng-container class="land_success pt-5px">
+          <p>Successful Land</p>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <button [ngClass]="s_land?.selected ? 'btn col-md-4 active' : 'btn col-md-4'"
+                *ngFor="let s_land of successLand" (click)="successfulLand(s_land.value)">{{s_land?.value | titlecase}}</button>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+        </ng-container>
+      </div>
+      <!-- spacex launch program list start-->
+      <div class="col-md-9">
+        <div class="row">
+          <div class="grid-item1 col-md-3" *ngFor="let space of spaceLaunuchList">
+            <div class="card card-style">
+              <img class="card-img-top card-image" [src]="space?.links?.mission_patch_small" alt="spacex launch image">
+              <div class="card-body">
+                <p>{{space?.mission_name}} #{{space?.flight_number}}</p>
+                <p><b>Mission Ids :</b></p>
+                <ul *ngFor="let m_id of space?.mission_id">
+                  <li>{{m_id}}</li>
+                </ul>
+                <p><b>Lanch year : </b> {{space?.launch_year}}</p>
+                <p><b>Successful Lanuch : </b> {{space?.launch_success}}</p>
+                <p><b>Successful Landing : </b> {{space?.rocket?.first_stage?.cores[0].land_success}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- When no list is available -->
+        <div class="no-text" *ngIf="!spaceLaunuchList?.length">
+          <i class="fa fa-frown-o" aria-hidden="true"></i>
+          <h3>No SpaceX Launch Program Available...</h3>
+        </div>
+      </div>
+    </div>
+      <h4>Developed by: Bindu Nunna</h4>
+  </div>
+
+</div>

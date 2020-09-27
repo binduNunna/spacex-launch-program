@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Grid container styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+
+/* Grid item styles */
+  .grid-item {
+    background-color: rgba(248, 240, 240, 0.923);
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+/* Inner Grid item styles */
+  .grid-item1 {
+    background-color: rgba(255, 246, 246, 0.991);
+    padding: 22px;
+    font-size: 20px;
+  }
+
+  /* To provide normal backgroud to button when it is not selected or hovered */
+  .grid-item .btn {
+    border: none;
+    outline: none;
+    margin: 5px 20px 5px 0px;
+    background-color: #99d468ab;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+
+  /* To provide active style to button on hover and selection */
+  .grid-item .active, .btn:hover {
+    background-color: #6ee60cf3;
+    color: Black;
+  }
+
+  /* To provide spaces between cards */
+  .card-style {
+    margin: 0 0.5px 10px 0.5px;
+    padding: 20px;
+  }
+
+  /* To give background to the image */
+  .card-image {
+    background-color: rgb(243, 240, 240);
+  }
+
+  /* To make the empty content center of the page */
+  .no-text {
+    padding: 600px;
+    font-family: cursive;
+  }
+
+  /* To remove ngx-overlay for cursor */
+  .ngx-overlay{
+    cursor: default !important;
+  }
+  .fa {
+      font-size: 100px;
+  }
